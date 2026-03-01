@@ -1,0 +1,423 @@
+/**
+ * Modern CSS Theme & Design Tokens
+ * A comprehensive design system using CSS custom properties
+ */
+
+/* ============================================
+   COLOR PALETTE
+   Based on modern, accessible color systems
+   ============================================ */
+
+:root {
+  /* Primary Colors - Indigo/Violet */
+  --color-primary-50: #eef2ff;
+  --color-primary-100: #e0e7ff;
+  --color-primary-200: #c7d2fe;
+  --color-primary-300: #a5b4fc;
+  --color-primary-400: #818cf8;
+  --color-primary-500: #6366f1;
+  --color-primary-600: #4f46e5;
+  --color-primary-700: #4338ca;
+  --color-primary-800: #3730a3;
+  --color-primary-900: #312e81;
+  --color-primary-950: #1e1b4b;
+
+  /* Secondary Colors - Slate */
+  --color-secondary-50: #f8fafc;
+  --color-secondary-100: #f1f5f9;
+  --color-secondary-200: #e2e8f0;
+  --color-secondary-300: #cbd5e1;
+  --color-secondary-400: #94a3b8;
+  --color-secondary-500: #64748b;
+  --color-secondary-600: #475569;
+  --color-secondary-700: #334155;
+  --color-secondary-800: #1e293b;
+  --color-secondary-900: #0f172a;
+  --color-secondary-950: #020617;
+
+  /* Semantic Colors */
+  --color-success-50: #f0fdf4;
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+  --color-success-700: #15803d;
+
+  --color-warning-50: #fffbeb;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+  --color-warning-700: #b45309;
+
+  --color-error-50: #fef2f2;
+  --color-error-500: #ef4444;
+  --color-error-600: #dc2626;
+  --color-error-700: #b91c1c;
+
+  --color-info-50: #eff6ff;
+  --color-info-500: #3b82f6;
+  --color-info-600: #2563eb;
+  --color-info-700: #1d4ed8;
+
+  /* Neutral Colors */
+  --color-white: #ffffff;
+  --color-black: #000000;
+}
+
+/* ============================================
+   THEME COLORS (Light Mode - Default)
+   ============================================ */
+
+:root {
+  /* Background Colors */
+  --color-bg-primary: var(--color-white);
+  --color-bg-secondary: var(--color-secondary-50);
+  --color-bg-tertiary: var(--color-secondary-100);
+  --color-bg-inverse: var(--color-secondary-900);
+  --color-bg-muted: var(--color-secondary-200);
+
+  /* Text Colors */
+  --color-text-primary: var(--color-secondary-900);
+  --color-text-secondary: var(--color-secondary-600);
+  --color-text-tertiary: var(--color-secondary-500);
+  --color-text-inverse: var(--color-white);
+  --color-text-muted: var(--color-secondary-400);
+  --color-text-disabled: var(--color-secondary-300);
+
+  /* Border Colors */
+  --color-border-primary: var(--color-secondary-200);
+  --color-border-secondary: var(--color-secondary-100);
+  --color-border-inverse: var(--color-secondary-700);
+
+  /* Interactive Colors */
+  --color-hover: var(--color-secondary-100);
+  --color-active: var(--color-secondary-200);
+  --color-focus: var(--color-primary-500);
+  --color-focus-ring: rgba(99, 102, 241, 0.4);
+
+  /* Selection */
+  --color-selection: rgba(99, 102, 241, 0.2);
+
+  /* Scrollbar */
+  --color-scrollbar-track: var(--color-secondary-100);
+  --color-scrollbar-thumb: var(--color-secondary-300);
+  --color-scrollbar-thumb-hover: var(--color-secondary-400);
+
+  /* Highlight */
+  --color-highlight: #fef08a;
+
+  /* Overlay */
+  --color-overlay: rgba(0, 0, 0, 0.5);
+  --color-backdrop: rgba(15, 23, 42, 0.6);
+}
+
+/* ============================================
+   DARK MODE
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Background Colors */
+    --color-bg-primary: var(--color-secondary-900);
+    --color-bg-secondary: var(--color-secondary-800);
+    --color-bg-tertiary: var(--color-secondary-700);
+    --color-bg-inverse: var(--color-white);
+    --color-bg-muted: var(--color-secondary-800);
+
+    /* Text Colors */
+    --color-text-primary: var(--color-secondary-50);
+    --color-text-secondary: var(--color-secondary-300);
+    --color-text-tertiary: var(--color-secondary-400);
+    --color-text-inverse: var(--color-secondary-900);
+    --color-text-muted: var(--color-secondary-500);
+    --color-text-disabled: var(--color-secondary-600);
+
+    /* Border Colors */
+    --color-border-primary: var(--color-secondary-700);
+    --color-border-secondary: var(--color-secondary-800);
+    --color-border-inverse: var(--color-secondary-200);
+
+    /* Interactive Colors */
+    --color-hover: var(--color-secondary-800);
+    --color-active: var(--color-secondary-700);
+    --color-focus: var(--color-primary-400);
+    --color-focus-ring: rgba(129, 140, 248, 0.4);
+
+    /* Selection */
+    --color-selection: rgba(129, 140, 248, 0.3);
+
+    /* Scrollbar */
+    --color-scrollbar-track: var(--color-secondary-800);
+    --color-scrollbar-thumb: var(--color-secondary-600);
+    --color-scrollbar-thumb-hover: var(--color-secondary-500);
+
+    /* Overlay */
+    --color-overlay: rgba(0, 0, 0, 0.7);
+    --color-backdrop: rgba(2, 6, 23, 0.8);
+  }
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+:root {
+  /* Font Families */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+
+  --font-serif: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+
+  /* Font Sizes - Fluid typography */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --text-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.25rem + 1.25vw, 2rem);
+  --text-3xl: clamp(1.875rem, 1.5rem + 1.875vw, 2.5rem);
+  --text-4xl: clamp(2.25rem, 1.75rem + 2.5vw, 3rem);
+
+  /* Font Weights */
+  --font-thin: 100;
+  --font-extralight: 200;
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+  --font-black: 900;
+
+  /* Line Heights */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+
+  /* Letter Spacing */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+}
+
+/* ============================================
+   SPACING
+   ============================================ */
+
+:root {
+  /* Spacing Scale - Based on 4px grid */
+  --space-0: 0;
+  --space-px: 1px;
+  --space-0\.5: 0.125rem; /* 2px */
+  --space-1: 0.25rem; /* 4px */
+  --space-1\.5: 0.375rem; /* 6px */
+  --space-2: 0.5rem; /* 8px */
+  --space-2\.5: 0.625rem; /* 10px */
+  --space-3: 0.75rem; /* 12px */
+  --space-3\.5: 0.875rem; /* 14px */
+  --space-4: 1rem; /* 16px */
+  --space-5: 1.25rem; /* 20px */
+  --space-6: 1.5rem; /* 24px */
+  --space-7: 1.75rem; /* 28px */
+  --space-8: 2rem; /* 32px */
+  --space-9: 2.25rem; /* 36px */
+  --space-10: 2.5rem; /* 40px */
+  --space-11: 2.75rem; /* 44px */
+  --space-12: 3rem; /* 48px */
+  --space-14: 3.5rem; /* 56px */
+  --space-16: 4rem; /* 64px */
+  --space-20: 5rem; /* 80px */
+  --space-24: 6rem; /* 96px */
+  --space-28: 7rem; /* 112px */
+  --space-32: 8rem; /* 128px */
+  --space-36: 9rem; /* 144px */
+  --space-40: 10rem; /* 160px */
+  --space-44: 11rem; /* 176px */
+  --space-48: 12rem; /* 192px */
+  --space-52: 13rem; /* 208px */
+  --space-56: 14rem; /* 224px */
+  --space-60: 15rem; /* 240px */
+  --space-64: 16rem; /* 256px */
+  --space-72: 18rem; /* 288px */
+  --space-80: 20rem; /* 320px */
+  --space-96: 24rem; /* 384px */
+}
+
+/* ============================================
+   SIZING
+   ============================================ */
+
+:root {
+  /* Container Widths */
+  --container-sm: 24rem; /* 384px */
+  --container-md: 28rem; /* 448px */
+  --container-lg: 32rem; /* 512px */
+  --container-xl: 36rem; /* 576px */
+  --container-2xl: 42rem; /* 672px */
+  --container-3xl: 48rem; /* 768px */
+  --container-4xl: 56rem; /* 896px */
+  --container-5xl: 64rem; /* 1024px */
+  --container-6xl: 72rem; /* 1152px */
+  --container-7xl: 80rem; /* 1280px */
+
+  /* Full Width */
+  --full: 100%;
+  --screen: 100vw;
+  --min: min-content;
+  --max: max-content;
+  --fit: fit-content;
+}
+
+/* ============================================
+   BORDER RADIUS
+   ============================================ */
+
+:root {
+  --radius-none: 0;
+  --radius-sm: 0.125rem; /* 2px */
+  --radius-default: 0.25rem; /* 4px */
+  --radius-md: 0.375rem; /* 6px */
+  --radius-lg: 0.5rem; /* 8px */
+  --radius-xl: 0.75rem; /* 12px */
+  --radius-2xl: 1rem; /* 16px */
+  --radius-3xl: 1.5rem; /* 24px */
+  --radius-full: 9999px;
+}
+
+/* ============================================
+   SHADOWS
+   ============================================ */
+
+:root {
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-default: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  --shadow-none: 0 0 #0000;
+
+  /* Colored Shadows */
+  --shadow-primary: 0 4px 14px 0 rgba(99, 102, 241, 0.39);
+  --shadow-success: 0 4px 14px 0 rgba(34, 197, 94, 0.39);
+  --shadow-warning: 0 4px 14px 0 rgba(245, 158, 11, 0.39);
+  --shadow-error: 0 4px 14px 0 rgba(239, 68, 68, 0.39);
+}
+
+/* ============================================
+   TRANSITIONS
+   ============================================ */
+
+:root {
+  --transition-duration: 150ms;
+  --transition-duration-slow: 300ms;
+  --transition-duration-slower: 500ms;
+
+  --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-timing-in: cubic-bezier(0.4, 0, 1, 1);
+  --transition-timing-out: cubic-bezier(0, 0, 0.2, 1);
+  --transition-timing-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Common transitions */
+  --transition-fast: var(--transition-duration) var(--transition-timing);
+  --transition-normal: var(--transition-duration-slow) var(--transition-timing);
+  --transition-slow: var(--transition-duration-slower) var(--transition-timing);
+}
+
+/* ============================================
+   Z-INDEX SCALE
+   ============================================ */
+
+:root {
+  --z-hide: -1;
+  --z-base: 0;
+  --z-raised: 10;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-popover: 500;
+  --z-tooltip: 600;
+  --z-toast: 700;
+}
+
+/* ============================================
+   BREAKPOINTS (for reference in JS)
+   ============================================ */
+
+:root {
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+/* ============================================
+   SAFE AREAS (for mobile notches)
+   ============================================ */
+
+:root {
+  --safe-area-top: env(safe-area-inset-top, 0px);
+  --safe-area-right: env(safe-area-inset-right, 0px);
+  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-area-left: env(safe-area-inset-left, 0px);
+}
+
+/* ============================================
+   FOCUS STYLES
+   ============================================ */
+
+:root {
+  --focus-ring: 0 0 0 2px var(--color-bg-primary), 0 0 0 4px var(--color-focus);
+  --focus-ring-inset: inset 0 0 0 2px var(--color-bg-primary), inset 0 0 0 4px var(--color-focus);
+}
+
+/* ============================================
+   GRADIENTS
+   ============================================ */
+
+:root {
+  --gradient-primary: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-400));
+  --gradient-secondary: linear-gradient(135deg, var(--color-secondary-700), var(--color-secondary-500));
+  --gradient-success: linear-gradient(135deg, var(--color-success-600), var(--color-success-500));
+  --gradient-warning: linear-gradient(135deg, var(--color-warning-600), var(--color-warning-500));
+  --gradient-error: linear-gradient(135deg, var(--color-error-600), var(--color-error-500));
+  --gradient-sunset: linear-gradient(135deg, #f59e0b, #ef4444, #ec4899);
+  --gradient-ocean: linear-gradient(135deg, #06b6d4, #3b82f6, #6366f1);
+  --gradient-forest: linear-gradient(135deg, #10b981, #059669, #047857);
+}
+
+/* ============================================
+   BACKDROP FILTERS
+   ============================================ */
+
+:root {
+  --backdrop-blur-sm: blur(4px);
+  --backdrop-blur: blur(8px);
+  --backdrop-blur-md: blur(12px);
+  --backdrop-blur-lg: blur(16px);
+  --backdrop-blur-xl: blur(24px);
+
+  --backdrop-brightness-50: brightness(0.5);
+  --backdrop-brightness-75: brightness(0.75);
+  --backdrop-brightness-100: brightness(1);
+  --backdrop-brightness-125: brightness(1.25);
+
+  --backdrop-contrast-50: contrast(0.5);
+  --backdrop-contrast-100: contrast(1);
+  --backdrop-contrast-125: contrast(1.25);
+
+  --backdrop-saturate-50: saturate(0.5);
+  --backdrop-saturate-100: saturate(1);
+  --backdrop-saturate-150: saturate(1.5);
+  --backdrop-saturate-200: saturate(2);
+}

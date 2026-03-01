@@ -1,0 +1,291 @@
+/**
+ * Modern CSS Reset
+ * Based on: https://www.joshwcomeau.com/css/custom-css-reset/
+ * With additional enhancements for modern web applications
+ */
+
+/*
+  1. Use a more intuitive box model
+  2. Remove default margin and padding
+  3. Set core root font size for accessibility
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* Prevent font size inflation on mobile */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  /* Smooth scrolling */
+  scroll-behavior: smooth;
+  /* Prevent scroll on zoom in iOS */
+  overscroll-behavior: none;
+}
+
+/*
+  1. Remove default margin
+  2. Remove default border
+  3. Add border radius for better focus visibility
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*
+  1. Inherit font family for form elements
+  2. Remove default styling
+  3. Fix font size on iOS
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Fix font size on iOS for small inputs */
+@media (max-width: 480px) {
+  input[type='text'],
+  input[type='email'],
+  input[type='tel'],
+  input[type='url'],
+  input[type='password'],
+  input[type='number'],
+  input[type='search'],
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/*
+  1. Remove list styles
+  2. Reset default marker styles
+*/
+ul,
+ol {
+  list-style: none;
+}
+
+/*
+  1. Remove default link styling
+  2. Remove tap highlight on mobile
+*/
+a {
+  color: inherit;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/*
+  1. Reset heading styles
+  2. Remove default line-height inheritance issues
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: 1.2;
+}
+
+/*
+  1. Reset paragraph styles
+  2. Add proper line height for readability
+*/
+p {
+  line-height: 1.6;
+}
+
+/*
+  1. Reset table styles
+  2. Remove border spacing
+*/
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*
+  1. Reset blockquote and q styles
+  2. Remove default quotes
+*/
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: '';
+  content: none;
+}
+
+/*
+  1. Reset code and pre styles
+  2. Preserve whitespace and scrolling
+*/
+pre,
+code,
+kbd,
+samp {
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace);
+  font-size: 0.9em;
+}
+
+pre {
+  overflow-x: auto;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+/*
+  1. Reset hr styles
+  2. Modern styling
+*/
+hr {
+  border: none;
+  border-top: 1px solid var(--color-border, #e5e7eb);
+  margin: 1rem 0;
+}
+
+/*
+  1. Reset mark styles
+  2. Better highlight styling
+*/
+mark {
+  background-color: var(--color-highlight, #fef08a);
+  color: inherit;
+  padding: 0.125rem 0.25rem;
+  border-radius: 2px;
+}
+
+/*
+  1. Reset abbr styles
+  2. Add cursor for better UX
+*/
+abbr {
+  cursor: help;
+  text-decoration: underline dotted;
+}
+
+/*
+  1. Reset details and summary
+  2. Better marker styling
+*/
+details {
+  & > summary {
+    list-style: none;
+    cursor: pointer;
+    &::-webkit-details-marker {
+      display: none;
+    }
+    &::marker {
+      display: none;
+    }
+  }
+}
+
+/*
+  1. Reset dialog styles
+  2. Better backdrop
+*/
+dialog {
+  border: none;
+  background: none;
+  padding: 0;
+  &::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+/*
+  1. Remove default focus outline
+  2. Add custom focus styles for accessibility
+*/
+:focus-visible {
+  outline: 2px solid var(--color-focus, #3b82f6);
+  outline-offset: 2px;
+}
+
+/*
+  1. Remove animations for users who prefer reduced motion
+*/
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*
+  1. Remove default selection styling
+  2. Add custom selection colors
+*/
+::selection {
+  background-color: var(--color-selection, rgba(59, 130, 246, 0.3));
+  color: inherit;
+}
+
+/*
+  1. Better scrollbar styling
+  2. Webkit browsers
+*/
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-scrollbar-track, #f1f5f9);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-scrollbar-thumb, #94a3b8);
+  border-radius: 4px;
+  &:hover {
+    background: var(--color-scrollbar-thumb-hover, #64748b);
+  }
+}
+
+/*
+  1. Firefox scrollbar
+*/
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-scrollbar-thumb, #94a3b8) var(--color-scrollbar-track, #f1f5f9);
+}
